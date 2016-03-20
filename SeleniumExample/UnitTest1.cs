@@ -24,13 +24,14 @@ namespace SeleniumExample
             //  firefox.Navigate().GoToUrl("https://www.google.ru");
             //  firefox.FindElement(By.Id("lst-ib")).SendKeys("Новокузнецк");
             //  firefox.FindElement(By.Id("lst-ib")).SendKeys(Keys.Enter);
+            Assert.AreEqual("http://2gis.ru/countries/global/novosibirsk", firefox.Url);
         }
 
         // разрушение объекта драйвера после окончание теста.
         [TestCleanup]
        public void TearDown()
         {
-           // firefox.Quit();
+            firefox.Quit();
         }
     }
 }
