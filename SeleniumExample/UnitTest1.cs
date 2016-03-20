@@ -16,16 +16,21 @@ namespace SeleniumExample
         public void TestMethod1()
         {
             firefox = new FirefoxDriver();
-            firefox.Navigate().GoToUrl("http://www.google.com/");
-            firefox.FindElement(By.Id("gbqfq")).SendKeys("AutoQA.org");
-            firefox.FindElement(By.Id("gbqfq")).SendKeys(Keys.Enter);
+          
+              firefox.Navigate().GoToUrl("http://2gis.ru/countries/global");
+              firefox.FindElement(By.ClassName("world__searchInput")).SendKeys("Навосибирск");
+
+              firefox.FindElement(By.ClassName("world__searchInput")).SendKeys(Keys.Enter);
+            //  firefox.Navigate().GoToUrl("https://www.google.ru");
+            //  firefox.FindElement(By.Id("lst-ib")).SendKeys("Новокузнецк");
+            //  firefox.FindElement(By.Id("lst-ib")).SendKeys(Keys.Enter);
         }
 
         // разрушение объекта драйвера после окончание теста.
         [TestCleanup]
-        public void TearDown()
+       public void TearDown()
         {
-            firefox.Quit();
+           // firefox.Quit();
         }
     }
 }
